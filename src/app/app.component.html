@@ -1,0 +1,21 @@
+<div>
+  <h1>Book List</h1>
+  <div class="book-list">
+    <ul>
+      <li *ngFor="let book of books" (click)="selectBook(book)">
+        {{ book.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="book-details">
+    <h2>Selected Book Details:</h2>
+    <div *ngIf="selectedBook">
+      <p>Title: {{ selectedBook.title }}</p>
+      <p>Author: {{ selectedBook.author }}</p>
+      <p>Publication Year: {{ selectedBook.publicationYear }}</p>
+    </div>
+    <div *ngIf="!selectedBook">
+      <p>No book selected.</p>
+    </div>
+  </div>
+</div>
